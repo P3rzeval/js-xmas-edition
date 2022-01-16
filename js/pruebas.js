@@ -12,4 +12,31 @@ function probarValidarNombre() {
   );
 }
 
+function probarValidarCiudad () {
+    console.assert( 
+        validarCiudad('') === 'debe selecionar una ciudad' ,
+        'la funcion validar ciudad no valido la selecion de ciudad'
+    );
+}
+
+function probarValidarComportamiento () {
+    console.assert (
+        validarComportamiento('') === 'Seleccione uno de los 3 campos' ,
+        'La funcion validar comportamiento no valido '
+    );
+}
+
+function probarValidarRegalo () {
+    console.assert(
+        validarRegalo('') ===  'debe contenter minimo 50 caracteres',
+        'la funcion validar regalo no esta validando el minimo de caracteres'
+    );
+    console.assert(
+        validarRegalo('111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111') === 'solo debe de tener un maximo de 100 caracteres',
+        'la funcion validar regalo no esta validando el maximo de caracteres'
+    );
+}
 probarValidarNombre();
+probarValidarCiudad();
+probarValidarComportamiento();
+probarValidarRegalo();

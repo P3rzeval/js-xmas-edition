@@ -2,7 +2,7 @@ const $form = document.querySelector("#carta-a-santa");
 
 
 const nombre = $form.nombre.value;
-const ciudad = $form.ciudad.value;
+let ciudad = $form.ciudad.value;
 const comportamiento = $form.comportamiento.value;
 const descripcionRegalo = $form['descripcion-regalo'].value;
 
@@ -20,7 +20,7 @@ function validarNombre(nombre) {
 
 function validarCiudad(ciudad) {
 
-    if( ciudad.value === "" ) {
+    if( ciudad === "" ) {
         return "debe selecionar una ciudad"
     }
     return '';
@@ -36,11 +36,11 @@ function validarComportamiento (comportamiento) {
 };
 
 function validarRegalo(descripcionRegalo){
-    if ( descripcionRegalo === 0) {
-        return "debe contenter minimo 150 caracteres"
+    if ( descripcionRegalo.length === 0) {
+        return "debe contenter minimo 50 caracteres"
     }
-    if( descripcionRegalo >= 250) {
-        return "solo debe de tener un maximo de 250 caracteres"
+    if( descripcionRegalo.length >= 100) {
+        return "solo debe de tener un maximo de 100 caracteres"
     }
    return '';
 };
